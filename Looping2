@@ -1,0 +1,22 @@
+import javax.swing.JOptionPane;
+
+public class Main {
+    public static void main(String[] args) {
+        int highest = 0, lowest = 0;
+
+        for (int i = 1; i <= 10; i++) {
+            int n = Integer.parseInt(
+                    JOptionPane.showInputDialog("Enter number " + i + ":"));
+
+            if (i == 1) {
+                highest = n;
+                lowest = n;
+            } else {
+                if (n > highest) highest = n;
+                if (n < lowest) lowest = n;
+            }
+        }
+        JOptionPane.showMessageDialog(null,
+                "Highest: " + highest + "\nLowest: " + lowest);
+    }
+}
