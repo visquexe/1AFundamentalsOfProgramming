@@ -1,0 +1,68 @@
+
+public class CoffeeShopAnalyzer {
+    public static void main(String[] args) {
+
+        // PART 1: Paglalagay ng daily sales sa isang array
+        int[] weeklySales = {120, 145, 130, 155, 180, 210, 195};
+
+        // Paglalagay ng pangalan ng bawat araw sa isang array
+        String[] daysOfWeek = {
+                "Monday", "Tuesday", "Wednesday",
+                "Thursday", "Friday", "Saturday", "Sunday"
+        };
+
+        // PART 2: Pagpapakita ng daily sales
+        System.out.println("--- Daily Sales ---");
+
+        // Inuulit ang bawat elemento ng array
+        for (int i = 0; i < weeklySales.length; i++) {
+
+            // Ipinapakita ang araw at bilang ng cups na nabenta
+            System.out.println(daysOfWeek[i] + " sales: " + weeklySales[i]);
+        }
+
+        // PART 3: Pagkalkula ng total at average sales
+        int totalSales = 0; // Nagsisimula sa zero ang total sales
+
+        // Kinukuha at ina-add ang bawat daily sales
+        for (int dailySale : weeklySales) {
+            totalSales += dailySale;
+        }
+
+        // Kinukuha ang average daily sales
+        double averageSales = (double) totalSales / weeklySales.length;
+
+        // Ipinapakita ang weekly summary
+        System.out.println("\n--- Weekly Summary ---");
+        System.out.println("Total Sales: " + totalSales + " cups");
+        System.out.println("Average Daily Sales: " + averageSales + " cups");
+
+        // PART 4: Paghahanap ng highest at lowest sales
+        int maxSales = weeklySales[0]; // Panimulang highest sales
+        int minSales = weeklySales[0]; // Panimulang lowest sales
+
+        String bestDay = daysOfWeek[0]; // Panimulang best day
+        String worstDay = daysOfWeek[0]; // Panimulang worst day
+
+        // Sinusuri ang natitirang sales sa array
+        for (int i = 1; i < weeklySales.length; i++) {
+
+            // Kung mas mataas ang kasalukuyang sales
+            if (weeklySales[i] > maxSales) {
+                maxSales = weeklySales[i];
+                bestDay = daysOfWeek[i];
+            }
+
+            // Kung mas mababa ang kasalukuyang sales
+            if (weeklySales[i] < minSales) {
+                minSales = weeklySales[i];
+                worstDay = daysOfWeek[i];
+            }
+        }
+
+        // Ipinapakita ang pinakamataas at pinakamababang sales
+        System.out.println("\n--- Bests and Worsts ---");
+        System.out.println("Best day was " + bestDay + " with " + maxSales + " cups.");
+        System.out.println("Slowest day was " + worstDay + " with " + minSales + " cups.");
+    }
+}
