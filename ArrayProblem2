@@ -1,0 +1,30 @@
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Gawa ng 2D String array na "seats"
+        String[][] seats = {
+
+            // Row 1: Alice, Bob, Charlie
+            {"Alice", "Bob", "Charlie"},
+
+            // Row 2: David, Emma, Frank
+            {"David", "Emma", "Frank"}
+        };
+
+        // Print kung sino nasa row 2, column 3
+        // Index [1][2] = Frank
+        System.out.println("Second row, third column: "
+                + seats[1][2]);
+
+        // Palitan si Bob ng "Vacant"
+        seats[0][1] = "Vacant";
+
+        // Print yung buong 2D array sa isang line
+        System.out.println(
+                "[" + String.join(", ", seats[0])
+                + ", " + String.join(", ", seats[1]) + "]"
+        );
+    }
+}
