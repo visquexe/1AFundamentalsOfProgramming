@@ -1,0 +1,35 @@
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Gawa tayo ng double array na may 5 slots
+        double[] temperatures = new double[5];
+
+        // Lagay 32.5 sa unang slot (index 0)
+        temperatures[0] = 32.5;
+
+        // Lagay 34.0 sa index 1
+        temperatures[1] = 34.0;
+
+        // Lagay 31.8 sa index 2
+        temperatures[2] = 31.8;
+
+        // Lagay 33.2 sa index 3
+        temperatures[3] = 33.2;
+
+        // Lagay 35.1 sa index 4
+        temperatures[4] = 35.1;
+
+        // I-print ang temperature ng bawat araw
+        for (int i = 0; i < temperatures.length; i++) {
+            System.out.println("Day " + (i + 1) + ": " + temperatures[i]);
+        }
+
+        // I-update ang temperature ng Day 3
+        temperatures[2] = 32.0;
+
+        System.out.println("Updated temperature for Day 3: "
+                + temperatures[2]);
+    }
+}
