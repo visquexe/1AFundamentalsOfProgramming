@@ -1,0 +1,69 @@
+public class QuizGrader {
+    public static void main(String[] args) {
+
+        // PART 1: Paglalagay ng tamang sagot sa answer key
+        char[] answerKey = {
+                'A', 'C', 'B', 'D', 'A',
+                'C', 'C', 'B', 'A', 'D'
+        };
+
+        // Paglalagay ng sagot ng estudyante
+        char[] studentAnswers = {
+                'A', 'B', 'B', 'D', 'C',
+                'C', 'C', 'B', 'A', 'A'
+        };
+
+        // PART 2: Pag-set ng correct answer counter
+        int correctCount = 0;
+
+        // Pag-uulit para maikumpara ang bawat sagot
+        for (int i = 0; i < answerKey.length; i++) {
+
+            // Ginagawang uppercase ang sagot para hindi maging case-sensitive
+            char studentAnswer = Character.toUpperCase(studentAnswers[i]);
+
+            // Tinitingnan kung magkapareho ang sagot ng estudyante at answer key
+            if (studentAnswer == answerKey[i]) {
+
+                // Dinadagdagan ng isa ang correct answer counter
+                correctCount++;
+
+            } else {
+
+                // BONUS: Ipinapakita ang mga maling sagot
+                System.out.println(
+                        "Question " + (i + 1) +
+                                ": Incorrect. You answered '" + studentAnswer +
+                                "', correct answer is '" + answerKey[i] + "'."
+                );
+            }
+        }
+
+        // PART 3: Pagkalkula ng score percentage
+        double scorePercentage =
+                ((double) correctCount / answerKey.length) * 100;
+
+        // Ipinapakita ang resulta ng quiz
+        System.out.println("\n--- Quiz Results ---");
+
+        // Ipinapakita ang bilang ng tamang sagot
+        System.out.println(
+                "Correct Answers: " + correctCount + "/" + answerKey.length
+        );
+
+        // Ipinapakita ang final percentage
+        System.out.println("Score Percentage: " + scorePercentage + "%");
+
+        // PART 4: Pag-check kung pasado o bagsak
+        if (scorePercentage >= 70.0) {
+
+            // Ipinapakita kung pasado ang estudyante
+            System.out.println("Result: PASS");
+
+        } else {
+
+            // Ipinapakita kung bagsak ang estudyante
+            System.out.println("Result: FAIL");
+        }
+    }
+}
